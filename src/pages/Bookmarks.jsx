@@ -14,7 +14,7 @@ const Bookmarks = () => {
 			<IonHeader>
 				<IonToolbar>
                     <IonButtons slot="start">
-                        <IonBackButton text="Categories" />
+                        <IonBackButton text="Categories" defaultHref="/"/>
                     </IonButtons>
 					<IonTitle>Bookmarks</IonTitle>
 				</IonToolbar>
