@@ -61,7 +61,7 @@ const Categories = () => {
 
                     <IonButtons slot="end">
                         <IonButton routerLink="/bookmarks">
-                            <IonIcon icon={ bookmarkOutline } />&nbsp;
+                            <IonIcon icon={ bookmarkOutline } className='white-icon' />&nbsp;
 							{ bookmarks.length }
                         </IonButton>
                     </IonButtons>

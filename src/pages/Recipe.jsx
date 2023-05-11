@@ -92,10 +92,10 @@ const Recipe = () => {
 
 					<IonButtons slot="end">
 						<IonButton onClick={ addBookmark }>
-							<IonIcon icon={ bookmarks.includes(recipe) ? bookmark : bookmarkOutline } />
+							<IonIcon icon={ bookmarks.includes(recipe) ? bookmark : bookmarkOutline } className='white-icon' />
 						</IonButton>
 						<IonButton onClick={goToHome}>
-                            <IonIcon icon={home} className='home-icon' />
+                            <IonIcon icon={home} className='white-icon' />
                         </IonButton>
 					</IonButtons>
 				</IonToolbar>
