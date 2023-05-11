@@ -83,7 +83,10 @@ const Categories = () => {
                                 
                                 <IonCol className={ styles.col } size="6" key={ `recipe_${ index }` }>
                                     <Link to={ `/category/${ name }`}>
-                                        <img src={ recipe.image } alt="cover" />
+                                        <img src={ recipe.image } alt="cover"
+											onError={(e) => {
+												e.currentTarget.src = "/assets/placeholder.png"
+											}}/>
                                         <div className={ styles.categoryName }>
                                             <IonCardTitle>{ name }</IonCardTitle>
                                         </div>

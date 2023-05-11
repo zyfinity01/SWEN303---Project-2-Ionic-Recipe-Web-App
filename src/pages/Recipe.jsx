@@ -94,7 +94,11 @@ const Recipe = () => {
 			<IonContent fullscreen>
 
 				<div className={ styles.headerImage }>
-					<img src={ recipe.image } alt="main cover" />
+					<img src={ recipe.image } alt="main cover"
+						onError={(e) => {
+							e.currentTarget.src = "/assets/placeholder.png"
+						}}
+					/>
 					<div className={ `${ styles.headerInfo } animate__animated animate__slideInLeft` }>
 						<h1>{ recipe.label }</h1>
 						<p>{ recipe.dishType && recipe.dishType[0] }</p>
