@@ -139,3 +139,8 @@ a {
 
   text-decoration: none;
 }
+
+.home-icon {
+  color: white !important;
+  fill: white !important;
+}
