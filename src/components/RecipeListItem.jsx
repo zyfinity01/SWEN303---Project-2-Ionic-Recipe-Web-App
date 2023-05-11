@@ -7,7 +7,10 @@ export const RecipeListItem = ({ recipe, fromSearch = false, fromBookmarks = fal
     <Link to={{ pathname: `/recipe/${ recipe.label.replace(" ", "").toLowerCase() }`, state: { recipe, fromSearch, fromBookmarks }}}>
         <IonItem detail={ true } lines="full" className={ styles.categoryItem }>
                                         
-            <img src={ recipe.image } alt="cover" className={ styles.categoryImage } />
+            <img src={ recipe.image } alt="cover" className={ styles.categoryImage }
+                onError={(e) => {
+                e.currentTarget.src = "/assets/placeholder.png"
+            }} />
 
             <IonLabel className={ styles.categoryDetails }>
                 <h2>{ recipe.label }</h2>

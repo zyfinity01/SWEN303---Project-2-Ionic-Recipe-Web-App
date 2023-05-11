@@ -1,10 +1,13 @@
 .headerImage {
 
+	border-bottom: 5px solid var(--ion-color-main);
+
 	img {
 
-		width: 100%;
-		margin-top: -5rem;
-		border-bottom: 5px solid var(--ion-color-main);
+		width: 50%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.headerInfo {
