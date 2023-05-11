@@ -8,6 +8,7 @@ import { RecipeListItem } from "../components/RecipeListItem";
 const Search = () => {
 
     const searchRef = useRef();
+    const [ notFound, setNotFound ] = useState(false);
     const [ searchResults, setSearchResults ] = useState([]);
     const [ showLoader, hideLoader ] = useIonLoading();
 
@@ -28,10 +29,11 @@ const Search = () => {
         const searchTerm = searchRef.current.value;
         const data = await performSearch(searchTerm);
 
+        setNotFound(data.hits.length < 1);
         setSearchResults(data.hits);
 
         setTimeout(() => {
-            
+
             hideLoader();
         }, 300);
     }
@@ -82,6 +84,9 @@ const Search = () => {
                         <IonRow className="ion-justify-content-center ion-text-center ion-margin-top ion-padding-top">
                             <IonCol size="8">
                                 <IonText>
+                                    { notFound &&
+                                        <h3>No items found!</h3>
+                                    }
                                     Search for a recipe then select from the list to view it
                                 </IonText>
 
