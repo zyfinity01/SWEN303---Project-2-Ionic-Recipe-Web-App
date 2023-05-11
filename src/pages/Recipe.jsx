@@ -1,7 +1,8 @@
 import { IonBackButton, IonButton, IonButtons, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonList, IonListHeader, IonPage, IonRow, IonTitle, IonToolbar, useIonModal, useIonToast } from '@ionic/react';
-import { bookmark, bookmarkOutline, informationCircleOutline, layersOutline, peopleOutline, timeOutline } from 'ionicons/icons';
+import { bookmark, bookmarkOutline, informationCircleOutline, layersOutline, peopleOutline, timeOutline, home } from 'ionicons/icons';
 import { useEffect, useRef } from 'react';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router';
 import { Ingredient } from '../components/Ingredient';
 import IngredientsModal from '../components/IngredientsModal';
@@ -20,6 +21,7 @@ const Recipe = () => {
 	const [ fromSearch, setFromSearch ] = useState(false);
 	const [ fromBookmarks, setFromBookmarks ] = useState(false);
 
+	const history = useHistory();
 	const bookmarks = useStoreState(BookmarkStore, getBookmarks);
 
 	const [ showToast ] = useIonToast();
@@ -45,6 +47,10 @@ const Recipe = () => {
 		dismiss: handleDismissNutritionModal,
 		recipe
 	});
+
+    const goToHome = () => {
+        history.push('/');
+    }
 
 	useEffect(() => {
 
@@ -88,6 +94,9 @@ const Recipe = () => {
 						<IonButton onClick={ addBookmark }>
 							<IonIcon icon={ bookmarks.includes(recipe) ? bookmark : bookmarkOutline } />
 						</IonButton>
+						<IonButton onClick={goToHome}>
+                            <IonIcon icon={home} className='home-icon' />
+                        </IonButton>
 					</IonButtons>
 				</IonToolbar>
 			</IonHeader>
