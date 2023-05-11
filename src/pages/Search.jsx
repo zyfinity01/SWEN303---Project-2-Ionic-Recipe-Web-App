@@ -43,7 +43,7 @@ const Search = () => {
                 <IonToolbar>
                     <IonTitle>Search Recipes</IonTitle>
                     <IonButtons slot="start">
-                        <IonBackButton color="main" text="Categories" />
+                        <IonBackButton color="main" text="Categories" defaultHref="/" />
                     </IonButtons>
                 </IonToolbar>
             </IonHeader>

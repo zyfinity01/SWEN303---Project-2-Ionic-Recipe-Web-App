@@ -81,7 +81,7 @@ const Recipe = () => {
 				<IonToolbar>
 					<IonTitle>View Recipe</IonTitle>
 					<IonButtons slot="start">
-						<IonBackButton text={ fromSearch ? "Search" : fromBookmarks ? "Bookmarks" : "Recipes" } color="main" />
+						<IonBackButton text={ fromSearch ? "Search" : fromBookmarks ? "Bookmarks" : "Recipes" } color="main" defaultHref="/" />
 					</IonButtons>
 
 					<IonButtons slot="end">

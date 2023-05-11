@@ -20,7 +20,7 @@ const Category = () => {
 			<IonHeader>
 				<IonToolbar>
                     <IonButtons slot="start">
-                        <IonBackButton text="Categories" />
+                        <IonBackButton text="Categories" defaultHref="/"/>
                     </IonButtons>
 					<IonTitle>{ name } Recipes</IonTitle>
 				</IonToolbar>
@@ -34,9 +34,7 @@ const Category = () => {
 
                 <IonList>
                     { categoryRecipes.map((categoryRecipe, index) => {
-
                         const { recipe } = categoryRecipe;
-
                         return (
                             <RecipeListItem recipe={ recipe } key={ `recipe_${ index }` } />
                         );
